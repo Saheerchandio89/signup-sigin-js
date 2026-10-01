@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f172a, #312e81);
+            padding: 20px;
+        }
+
+        .box {
+            width: 100%;
+            max-width: 420px;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .3);
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            background: #4f46e5;
+            color: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+            color: #111827;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 6px;
+            font-weight: bold;
+            color: #374151;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #4f46e5;
+        }
+
+        .error {
+            color: #dc2626;
+            font-size: 13px;
+            min-height: 18px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 10px;
+            background: #4f46e5;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4338ca;
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 20px;
+            color: #6b7280;
+        }
+
+        a {
+            color: #4f46e5;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Welcome */
+
+        #welcomePage {
+            display: none;
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .3);
+        }
+
+        .welcome-icon {
+            width: 65px;
+            height: 65px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #16a34a;
+            color: white;
+            border-radius: 50%;
+            font-size: 28px;
+        }
+
+        .welcome-title {
+            text-align: center;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .success {
+            text-align: center;
+            color: #16a34a;
+            margin-bottom: 25px;
+        }
+
+        .user-data {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .user-data p {
+            margin: 12px 0;
+            color: #374151;
+        }
+
+        .logout {
+            background: #ef4444;
+        }
+
+        .logout:hover {
+            background: #dc2626;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- LOGIN -->
+
+    <div class="box" id="loginPage">
+
+        <div class="icon">S</div>
+
+        <h1>Welcome Back</h1>
+
+        <p class="subtitle">
+            Login to your account
+        </p>
+
+
+        <form id="loginForm">
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Enter your email"
+            >
+
+            <p
+                id="loginEmailError"
+                class="error"
+            ></p>
+
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter your password"
+            >
+
+            <p
+                id="loginPasswordError"
+                class="error"
+            ></p>
+
+
+            <p
+                id="loginError"
+                class="error"
+            ></p>
+
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+
+        <div class="link">
+
+            Don't have an account?
+
+            <a href="index.html">
+                Signup
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- WELCOME -->
+
+    <div id="welcomePage">
+
+        <div class="welcome-icon">
+            ✓
+        </div>
+
+        <h1 class="welcome-title">
+            Welcome
+        </h1>
+
+        <p class="success">
+            Login successful!
+        </p>
+
+
+        <div class="user-data">
+
+            <h3>Login User Data</h3>
+
+            <p>
+                <b>Email:</b>
+                <span id="showEmail"></span>
+            </p>
+
+            <p>
+                <b>Age:</b>
+                <span id="showAge"></span>
+            </p>
+
+            <p>
+                <b>Country:</b>
+                <span id="showCountry"></span>
+            </p>
+
+            <p>
+                <b>Date of Birth:</b>
+                <span id="showDob"></span>
+            </p>
+
+        </div>
+
+
+        <button
+            class="logout"
+            id="logoutBtn"
+        >
+            Logout
+        </button>
+
+    </div>
+
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>
